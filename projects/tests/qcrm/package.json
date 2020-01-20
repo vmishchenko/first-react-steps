@@ -1,0 +1,24 @@
+{
+  "homepage": "http://vmishchenko.github.io/qcrm",
+  "name": "qcrm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test task for SupportYourApp",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "qcrm"
+  },
+  "author": "Vlad Mishchenko",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

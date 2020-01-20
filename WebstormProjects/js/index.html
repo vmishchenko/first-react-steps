@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Here is solution for task 3</h3>
+    <div>
+        <span>y = </span>
+        <input typeof="text" placeholder="tour formula" id="formula"/>
+        <span> with <em>x</em> value</span>
+        <input typeof="text" placeholder="x" id="x" maxlength="6"/>
+        <input type="button" value="Add point" onclick="addPoint()">
+    </div>
+
+    <svg viewBox="0 0 500 100">
+
+        <polyline
+            id="chart"
+            fill="none"
+            stroke="#0074d9"
+            stroke-width="2"
+            points=""
+        />
+    </svg>
+
+    <script>
+      const calculate = (x, formula) => {
+        const mathKeys = Object.getOwnPropertyNames(Math);
+        const mathValues = mathKeys.map((key) => Math[key]);
+        formula = formula.split('x').join(x);
+        return Function(mathKeys, 'return (' + formula + ');').apply(null, mathValues);
+      };
+
+      const addPoint = () => {
+        const formula = document.getElementById('formula').value;
+        let x = document.getElementById('x').value;
+
+        if (x.length === 0 || formula.length === 0) {
+          return alert('Please, fulfill formula and x value')
+        } else {
+            const y = calculate(x, formula);
+            const chart = document.getElementById('chart');
+            let chartPoints = chart.getAttribute("points");
+            chartPoints += `${x},${y} `;
+            chart.setAttribute('points', chartPoints);
+            document.getElementById('x').value = "";
+        }
+      };
+    </script>
+
+</body>
+</html>

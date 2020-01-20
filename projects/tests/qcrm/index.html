@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>QCRM - Login</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <div id="showBg" class="showBg"></div>
+  <div class="login">
+    <div class="logo__wrapper">
+      <div class="login__logo">
+        <div class="login__logo-square login__logo-square-orange"></div>
+        <div class="login__logo-square login__logo-square-pink"></div>
+        <div class="login__logo-square login__logo-square-blue"></div>
+        <div class="login__logo-square login__logo-square-green"></div>
+      </div>
+    </div>
+
+    <div class="login__box">
+      <h2 class="login__title">QCRM</h2>
+      <h2 class="login__subtitle">by SupportYourApp</h2>
+
+      <div class="login__form">
+        <form action="/" method="post">
+          <div class="input--wrapper">
+            <input
+              class="login__input"
+              name="surname"
+              type="text"
+              placeholder="Login"
+              autocomplete="username"
+              required
+            >
+          </div>
+
+          <div class="input--wrapper">
+            <input
+              class="login__input"
+              name="password"
+              type="password"
+              minlength="8"
+              maxlength="64"
+              placeholder="Password"
+              autocomplete="current-password"
+              required
+            >
+          </div>
+
+          <div class="input--wrapper login__checkbox">
+            <label>
+              <input
+                class="login__checkbox"
+                type="checkbox"
+                id="remember"
+              >
+              <span>Remember me on this device</span>
+            </label>
+          </div>
+          <input
+            type="submit"
+            value="Sign in to QCRM"
+            class="login__submit"
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

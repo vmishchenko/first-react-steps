@@ -1,0 +1,32 @@
+@keyframes showBg {
+  0% { opacity: 0; }
+  33% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes box {
+  0% { transform: rotateX(-45deg); }
+  90% { transform: rotateX(2deg); backdrop-filter: blur(0); }
+  95% { transform: rotateX(0); }
+  100% { backdrop-filter: blur(5px); }
+}
+
+@keyframes logo {
+  0% { transform: rotateX(60deg); }
+  90% { transform: rotateX(3deg); }
+  100% { transform: rotateX(0); }
+}
+
+$colorSquares: ('orange': -100px, 'pink': -150px, 'blue': 200px, 'green': 250px,);
+
+@each $name, $distance in $colorSquares {
+  @keyframes square-#{$name} {
+    from { transform: perspective(1000px) translateY(#{$distance}) }
+    to { transform: perspective(1000px) translateY(0); }
+  }
+}
+
+@keyframes image {
+  from { opacity: 0; }
+  to { opacity: 100%; }
+}
